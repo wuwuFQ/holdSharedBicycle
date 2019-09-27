@@ -1,1 +1,49 @@
 /* pages/mine/mine.wxss */
+
+.header_imageView {
+  display: flex;
+  justify-content: center;
+
+  margin-top: 40rpx;
+  
+}
+
+.nickName {
+  display: flex;
+  justify-content: center;
+  /* align-items: flex-end; */
+  padding-top: 10rpx;
+}
+
+.mine_group {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  margin-top: 100rpx;
+  justify-content: center;
+}
+
+.mine_group>.mine_cell {
+  /* width: 37.5%; */
+  /* box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  border: solid blue 1px; */
+  width: 45%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.mine_content {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  width: 75%;
+  background-color: white;
+  box-shadow: 2px 2px 10px 3px #aaa; /*for Android*/
+  -webkit-box-shadow: 2px 2px 10px 3px #aaa; /*for IOS*/
+  border-radius: 6rpx;
+  margin-top: 20rpx;
+  margin-bottom: 20rpx;
+}

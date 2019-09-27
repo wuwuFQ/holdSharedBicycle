@@ -1,0 +1,14 @@
+<!--pages/login/login.wxml-->
+<view class="app_icon"><image src="/images/bike.png" style="width: 100px; height: 100px"></image></view>
+<input class="phoneInput" placeholder="请输入手机号" type="number" bindblur="phoneInputHandle" maxlength="11"></input>
+<view class="codeView">
+<input class="codeInput" placeholder="请输入验证码" type="number" bindblur="codeInputHandle" maxlength="4"></input>
+<button class="codeButton" bindtap="getCodeAction" disabled="{{disabled}}" style="background-color: {{color}}" >{{text}}</button>
+</view>
+
+<checkbox-group class="agree-group" bindchange="checkboxChange">
+<label class="agreeLabel"><checkbox class="agreeCheck" bindchange></checkbox>阅读并同意</label>
+</checkbox-group>
+<label class="userProtocol" bindtap="userProtocolClick">《用户协议》</label>
+
+<button class="loginButton" bindtap="loginButtonClick">注册/登录</button>

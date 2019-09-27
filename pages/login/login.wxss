@@ -1,0 +1,73 @@
+/* pages/login/login.wxss */
+.app_icon{
+margin-top: 100rpx;
+ display: flex;
+ justify-content: center;
+
+}
+
+.phoneInput{
+  margin: 100rpx 60rpx 20rpx 60rpx;
+  height: 80rpx;
+  
+  border-bottom: 1rpx;
+  border-bottom-style: solid;
+  border-color: red;
+}
+.codeView{
+ display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 20rpx 60rpx 20rpx 60rpx;
+}
+.codeInput{
+
+  margin-right: 10rpx;
+  height: 80rpx;
+  width: auto;
+  border-bottom: 1rpx;
+  border-bottom-style: solid;
+  border-color: red;
+
+}
+.codeButton{
+  margin-right: 0;
+  padding: 0;
+  width: 120px;
+  height: 80rpx;
+  background-color: green;
+  line-height: 80rpx;
+  color: white;
+}
+
+.agree-group{
+  display: inline-block;
+  margin: 0 0 0 60rpx;
+}
+.agreeLabel{
+
+font-size: 26rpx;
+color: rgba(102, 113, 117, 0.966);
+}
+
+.agreeCheck{
+  transform: scale(0.6,0.6);
+}
+
+.userProtocol{
+  display: inline-block;
+  background-color: white;
+  height: 30rpx;
+  font-size: 26rpx;
+  color: blue;
+}
+
+.loginButton{
+  width: 80%;
+  height: 80rpx;
+  line-height: 80rpx;
+  border-radius: 40rpx;
+  margin-top: 80rpx;
+  background-color: green;
+  color: white;
+}

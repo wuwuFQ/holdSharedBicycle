@@ -1,0 +1,29 @@
+/* pages/wallet_recharge/wallet_recharge.wxss */
+.title{
+  margin: 20rpx 30rpx;
+}
+.priceView{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+}
+.priceCell{
+  border-style: solid;
+  border-width: 1rpx;
+  padding: 20rpx 40rpx;
+}
+.tipView{
+  text-align: center;
+  color: green;
+  font-size: 26rpx;
+  margin-top: 100rpx;
+}
+button{
+  background-color: green;
+  color: white;
+  width: 80%;
+  height: 80rpx;
+  line-height: 80rpx;
+  border-radius: 40rpx;
+  margin-top: 16rpx;
+}

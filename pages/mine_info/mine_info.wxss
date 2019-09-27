@@ -1,0 +1,10 @@
+/* pages/mine_info/mine_info.wxss */
+.info_cell{
+display: flex;
+justify-content: space-between;
+align-items: center;
+margin: 20rpx 20rpx;
+padding-bottom: 10px;
+border-bottom: solid 1px lightgray;
+}
+

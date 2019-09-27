@@ -1,0 +1,31 @@
+<!--pages/mine_info/mine_info.wxml-->
+
+<view class="superView"  >
+
+<view class="info_cell" bindtap="headerImgViewHandle"> 
+<view> 头像 </view>
+<image src="{{head_image}}" style="width: 80rpx; height: 80rpx; border-radius: 40rpx;"></image>
+</view>
+
+
+<view class="info_cell" bindtap="nickNameHandle"> 
+<view> 昵称 </view>
+<view>{{nickName}}</view>
+</view>
+
+<view class="info_cell"> 
+<view> 手机号 </view>  
+<view>{{phone}}</view>
+</view>
+
+<view class="info_cell"> 
+<view> 姓名 </view>
+<view>{{name}}</view>
+</view>
+
+<view class="info_cell"> 
+<view> 实名认证 </view>
+<view>{{auth}}</view>
+</view>
+
+</view>

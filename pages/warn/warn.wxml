@@ -18,7 +18,7 @@
 
    <view class="action">
 
-      <view class="title">拍摄单车周围环境，便于维修师傅找车</view>
+      <view class="title">拍摄故障单车照片</view>
 
       <view class="action-photo">
          <block wx:for="{{picUrls}}">

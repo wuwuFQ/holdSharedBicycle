@@ -1,0 +1,7 @@
+<!--pages/setting/setting.wxml-->
+<view> 
+<text>当前版本号</text>
+<text>1.0.7</text>
+</view>
+
+<button bindtap="logoutHandle">退出登录</button>

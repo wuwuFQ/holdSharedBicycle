@@ -100,6 +100,17 @@ Page({
     this.mapctx = wx.createMapContext("map", this)
     
     this.movetoCenter();
+
+   //是否登录
+    var status = app.getUserLoginStatus();
+    if (status) {
+
+    } else {
+      wx.reLaunch({
+        url: '../login/login',
+      })
+    }
+
   },
 
   /**

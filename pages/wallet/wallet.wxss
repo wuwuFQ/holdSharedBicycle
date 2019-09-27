@@ -1,0 +1,34 @@
+/* pages/wallet/wallet.wxss */
+.balanceView{
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+image {
+  width: 100%;
+  padding: 0;
+  height: 380rpx;
+}
+.balance_text{
+  position: absolute;
+  top: 130rpx;
+  color: green;
+  font-size: 45rpx;
+}
+.balance_title{
+  position: absolute;
+  top: 200rpx;
+  color: lightgray;
+  font-size: 20rpx;
+}
+
+button{
+  width: 300rpx;
+  height: 80rpx;
+  line-height: 80rpx;
+  border-radius: 40rpx;
+  background-color: green;
+  color: white;
+  margin-top: 50rpx;
+}

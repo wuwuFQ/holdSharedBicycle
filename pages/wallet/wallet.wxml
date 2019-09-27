@@ -1,0 +1,10 @@
+<!--pages/wallet/wallet.wxml-->
+<view class="balanceView">
+<image src="/images/myWalletBg.png"></image>
+<view class="balance_text">{{balance}}元</view>
+<view class="balance_title">我的余额</view>
+</view>
+
+<button bindtap="balanceRechargeHandle">余额充值</button>
+
+

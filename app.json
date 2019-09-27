@@ -2,7 +2,13 @@
   "pages": [
     "pages/index/index",
     "pages/mine/mine",
-    "pages/warn/warn"
+    "pages/warn/warn",
+    "pages/login/login",
+    "pages/mine_info/mine_info",
+    "pages/mine_info_modifyNickName/mine_info_modifyNickName",
+    "pages/setting/setting",
+    "pages/wallet_recharge/wallet_recharge",
+    "pages/wallet/wallet"
   ],
   "window": {
     "navigationBarBackgroundColor": "#b9dd08",
@@ -17,6 +23,5 @@
       "desc": "你的位置信息将用于小程序位置接口的效果展示"
     }
   },
-
   "sitemapLocation": "sitemap.json"
 }

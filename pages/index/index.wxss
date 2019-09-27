@@ -2,7 +2,7 @@
 .marker{
   position: relative;
   top: 50%;
-  height: 50px;
-  margin-top: -25px;
+  height: 100rpx;
+  margin-top: -50rpx;
   display: flex;
 }

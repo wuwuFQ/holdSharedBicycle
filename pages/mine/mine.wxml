@@ -1,2 +1,17 @@
 <!--pages/mine/mine.wxml-->
-<text>我的</text>
+<view class="header_imageView" bindtap="header_imageViewClick">
+<image src="{{header_src}}" style="width: 60px; height: 60px; border-radius: 30px;"></image>
+</view>
+<view class="nickName">{{nickName}} <image src="{{auth_icon}}" style="width: 13px; height: 10px"></image></view>
+
+<view class="mine_group"> 
+
+<view class="mine_cell"  wx:for="{{mine_group_title}}">
+
+<view class="mine_content" data-tag="{{index}}" bindtap="didSelectCellHandle">
+<image src="{{mine_group_imgs[index]}}" style="width: 60px; height: 60px; margin-top: 10px;"></image>
+<view style="margin-top: -10px; margin-bottom: 10px">{{item}} </view>
+</view>
+</view>
+
+</view>

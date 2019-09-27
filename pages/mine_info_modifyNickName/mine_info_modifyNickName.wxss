@@ -1,0 +1,14 @@
+/* pages/mine_info_modifyNickName/mine_info_modifyNickName.wxss */
+input{
+  margin: 60rpx;
+  background-color: gainsboro;
+  height: 80rpx;
+  border-radius: 10rpx;
+}
+button{
+  display: flex;
+  justify-content: center;
+  width: 65%;
+  background-color: green;
+  color: white;
+}

@@ -1,0 +1,18 @@
+/* pages/setting/setting.wxss */
+view{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 60rpx 0;
+  border: solid 1rpx lightgray;
+  padding: 20rpx 20rpx;
+
+}
+button{
+  margin: 80rpx 20rpx;
+  height: 80rpx;
+  line-height: 80rpx;
+  border-radius: 40rpx;
+  background-color: green;
+  color: white;
+}
