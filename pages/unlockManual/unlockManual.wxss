@@ -1,0 +1,18 @@
+/* pages/unlockManual/unlockManual.wxss */
+.titleView{
+  margin: 150rpx 40rpx 40rpx 40rpx;
+  font-size: 24px;
+ font-weight: bold;
+}
+input{
+  margin: 40rpx;
+  border-bottom: solid 1rpx #ddd;
+}
+button{
+  background-color: green;
+  margin: 40rpx 40rpx;
+height: 80rpx;
+line-height: 80rpx;
+border-radius: 40rpx;
+color: white;
+}

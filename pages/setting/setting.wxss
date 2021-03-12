@@ -4,7 +4,7 @@ view{
   justify-content: space-between;
   align-items: center;
   margin: 60rpx 0;
-  border: solid 1rpx lightgray;
+  border: solid 1rpx #ddd;
   padding: 20rpx 20rpx;
 
 }

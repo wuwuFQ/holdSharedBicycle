@@ -29,9 +29,9 @@ App({
   },
   //全局变量
   globalData: {
-    httpURL:'https://appgw.honghe.wlcxbj.com',
-    userInfo: null,
-    auth:"",
+    httpURL: 'https://appgw.honghe.wlcxbj.com',   //正式wuwufq.asia
+
+    // httpURL: 'https://appgw.test.honghe.bjholdzy.com', //测试
   },
 
   //全局函数
@@ -50,5 +50,14 @@ App({
       return false;
     }
   },
-
+  // token
+  getGlobalAuthorization: function () {
+    var auth = 'Bearer ' + wx.getStorageSync("access_token");
+    return auth;
+  },
+  //getUserID
+  getUserID: function () {
+    var userId = wx.getStorageSync("userId");
+    return userId;
+  },
 })

@@ -79,13 +79,14 @@ that.setData({
   },
   saveHandle: function () {
     var that = this;
+
     if ( that.newNickName != undefined && that.newNickName != "" && that.newNickName != that.oldNickName){
 
       var auth = 'bearer ' + wx.getStorageSync("access_token");
       var header = {
         'content-type': 'application/json'
       }
-      header.Authorization = auth;
+      header.Authorization = getApp().getGlobalAuthorization();
       wx.request({
         url: getApp().globalData.httpURL + '/api/user/update/basicinfo',
         method: "POST",

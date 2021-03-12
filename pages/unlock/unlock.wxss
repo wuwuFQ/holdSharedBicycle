@@ -1,0 +1,25 @@
+/* pages/unlock/unlock.wxss */
+
+.app_icon {
+  margin-top: 100rpx;
+  display: flex;
+  justify-content: center;
+}
+
+.scanBtn {
+  background-color: green;
+  margin: 40rpx 40rpx;
+  height: 80rpx;
+  line-height: 80rpx;
+  border-radius: 40rpx;
+  color: white;
+}
+
+.manualBtn {
+  background-color: white;
+  margin: 40rpx 40rpx;
+  height: 80rpx;
+  line-height: 80rpx;
+  border-radius: 40rpx;
+  border: solid 1rpx #ddd;
+}

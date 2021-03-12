@@ -1,4 +1,6 @@
 // pages/mine_info/mine_info.js
+var utils = require('../../utils/util.js')
+
 Page({
 
   /**
@@ -9,7 +11,7 @@ Page({
     nickName: "",
     phone: "",
     name: "",
-  auth: "未认证",
+  auth: "未认证",//0未认证 1待审核 2已认证 3认证失败
 
   },
 
@@ -32,26 +34,47 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
+    utils.getUserInfo();
+
     var that = this;
     wx.getStorage({
       key: 'basicInfo',
       success: function (res) {
         that.setData({
-          head_image: res.data.avatarUrl,
           nickName: res.data.nickName,
         });
+        if (res.data.avatarUrl) {
+          that.setData({
+            head_image: res.data.avatarUrl,
+          });
+        }
       },
     });
 
     wx.getStorage({
       key: 'realInfo',
       success: function (res) {
-        if (res.data.authenticationStatus == 2) {
-          that.setData({
-            auth: "已认证",
-            name: res.data.realName,
-          });
+        switch (res.data.authenticationStatus) {
+          case 0:
+            that.auth = "未认证"
+            break;
+          case 1:
+            that.auth = "待审核"
+            break;
+          case 2:
+            that.auth = "已认证"
+            that.setData({
+              name: res.data.realName,
+            })
+            break;
+          case 3:
+            that.auth = "认证失败"
+            break;
+
         }
+        that.setData({
+          auth: that.auth,
+        })
 
       },
     });
@@ -64,28 +87,6 @@ Page({
         });
       },
     })
-
-//阿里OSS上传
-//     var auth = 'bearer ' + wx.getStorageSync("access_token");
-//     var header = {
-//       'content-type': 'application/json'
-//     }
-//     header.Authorization = auth;
-// wx.request({
-//   url: getApp().globalData.httpURL + '/api/biz/aliyun/oss/sts',
-//   method: "POST",
-//   header: header,
-//   data: {
-//     tokenTypeSpid: '2',
-//     channel: "IOS",
-//     version: "1.0",
-//     deviceId: "123",
-//   },
-//   success: function (res) {
-// console.log(res)
-//     var ouploadOssModel = res.data.stsCredentialsModel;
-//   },
-// })
   },
 
   /**
@@ -124,18 +125,44 @@ Page({
   },
 
   headerImgViewHandle: function () {
-    wx.chooseImage({
-      count: 1,
-      sourceType: ["album", "camera"],
-      success: function (res) {
-console.log(res)
-        const tempFilePaths = res.tempFilePaths
-        wx.showToast({
-          icon: 'none',
-          title: '暂未开放',
-        })
-      },
-    })
+    // var that = this;
+//     wx.chooseImage({
+//       count: 1,
+//       sourceType: ["album", "camera"],
+//       success: function (res) {
+// console.log(res)
+//         const tempFilePaths = res.tempFilePaths[0]
+        
+//         wx.showToast({
+//           icon: 'none',
+//           title: '暂未开放',
+//         })
+//       },
+//     })
+
+    // var header = {
+    //   'content-type': 'application/json'
+    // }
+    // header.Authorization = getApp().getGlobalAuthorization();
+    // wx.request({
+    //   url: getApp().globalData.httpURL + '/api/biz/aliyun/oss/sts',
+    //   method: "POST",
+    //   header: header,
+    //   data: {
+    //     tokenTypeSpid: '2'
+    //   },
+    //   success: function (res) {
+    //     console.log(res);
+    //     var stsCredentialsModel = res.data.stsCredentialsModel;
+    //     var accessKeyId = stsCredentialsModel.accessKeyId;
+    //     var accessKeySecret = stsCredentialsModel.accessKeySecret;
+    //     var expiration = stsCredentialsModel.expiration;
+    //     var roleSessionName = stsCredentialsModel.roleSessionName;
+    //     var securityToken = stsCredentialsModel.securityToken;
+
+    //   }
+
+    // })
   },
 
   nickNameHandle: function () {
@@ -143,4 +170,27 @@ wx.navigateTo({
   url: '../mine_info_modifyNickName/mine_info_modifyNickName',
 })
   },
+
+
+  //
+  authClickHandle: function() {
+    var that = this;
+    
+    if (that.auth == "已认证") {
+      wx.show
+      wx.showToast({
+        title: '您已完成实名认证',
+        icon: 'none'
+      })
+    } else if (that.auth == "待审核") {
+      wx.showToast({
+        title: '资料已提交，等待审核',
+        icon: 'none'
+      })
+    } else { //未认证
+wx.navigateTo({
+  url: '../mine_info_auth/mine_info_auth',
+})
+    }
+  }
 })

@@ -1,9 +1,9 @@
 <!--pages/wallet_recharge/wallet_recharge.wxml-->
 <view class="title">充值金额：</view>
 <view class="priceView">
-<view class="priceCell" style="border-color: {{bgColor_1}}; color: {{textColor_1}}; " bindtap="selectPriceHandle" data-tag="100">99元</view>
-<view class="priceCell" style="border-color: {{bgColor_2}}; color: {{textColor_2}}; " bindtap="selectPriceHandle" data-tag="200">200元</view>
-<view class="priceCell" style="border-color: {{bgColor_3}}; color: {{textColor_3}}; " bindtap="selectPriceHandle" data-tag="300">300元</view>
+<view class="priceCell" style="border-color: {{bgColor_1}}; color: {{textColor_1}}; " bindtap="selectPriceHandle" data-tag="100">19元</view>
+<!-- <view class="priceCell" style="border-color: {{bgColor_2}}; color: {{textColor_2}}; " bindtap="selectPriceHandle" data-tag="200">200元</view>
+<view class="priceCell" style="border-color: {{bgColor_3}}; color: {{textColor_3}}; " bindtap="selectPriceHandle" data-tag="300">300元</view> -->
 </view>
 
 <view class="tipView">温馨提示：余额暂不支持线上退款，请理性充值</view>

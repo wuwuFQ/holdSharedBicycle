@@ -1,4 +1,4 @@
 <!--pages/mine_info_modifyNickName/mine_info_modifyNickName.wxml-->
-<input value="{{oldNickName}}" placeholder="请输入昵称" maxlength="12" bindblur="inputEventhandle"></input>
+<input value="{{oldNickName}}" placeholder="请输入昵称" maxlength="12" bindinput="inputEventhandle"></input>
 
 <button bindtap="saveHandle">保存</button>

@@ -1,5 +1,6 @@
 {
   "pages": [
+    
     "pages/index/index",
     "pages/mine/mine",
     "pages/warn/warn",
@@ -8,12 +9,19 @@
     "pages/mine_info_modifyNickName/mine_info_modifyNickName",
     "pages/setting/setting",
     "pages/wallet_recharge/wallet_recharge",
-    "pages/wallet/wallet"
+    "pages/wallet/wallet",
+    "pages/trip_end_comment/trip_end_comment",
+    "pages/mine_info_auth/mine_info_auth",
+    "pages/unlockManual/unlockManual",
+    "pages/unlock/unlock",
+    "pages/tripList/tripList",
+    "pages/messageList/messageList",
+    "pages/couponList/couponList"
   ],
   "window": {
     "navigationBarBackgroundColor": "#b9dd08",
     "navigationBarTextStyle": "black",
-    "navigationBarTitleText": "共享单车",
+    "navigationBarTitleText": "东隆出行",
     "backgroundColor": "#eeeeee",
     "backgroundTextStyle": "light",
     "enablePullDownRefresh": false

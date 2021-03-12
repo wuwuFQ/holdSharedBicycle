@@ -1,0 +1,50 @@
+module.exports = {
+  numberToFix: numberToFix,
+  timestampToTime: timestampToTime,
+}
+
+/**把数字转换成字符串，保留几位小数
+ * value: 数字
+ * num：保留几位小数
+ */
+function numberToFix(value, num) {
+  return value.toFixed(num)
+}
+
+
+function formatNumber(n) {
+  n = n.toString()
+  return n[1] ? n : '0' + n
+}
+
+  //时间戳转换
+function timestampToTime(timestamp, format) {
+    // var date = getDate(timestamp);//时间戳为10位需*1000
+    // var Y = date.getFullYear() + '-';
+    // var M = formatNumber(date.getMonth() + 1) + '-';
+    // var D = formatNumber(date.getDate()) + ' ';
+    // var h = formatNumber(date.getHours()) + ':';
+    // var m = formatNumber(date.getMinutes()) + ':';
+    // var s = formatNumber(date.getSeconds());
+    // return Y + M + D + h + m + s;
+    var date = getDate(timestamp);//时间戳为10位需*1000
+    var Y = date.getFullYear();
+    var M = formatNumber(date.getMonth() + 1);
+    var D = formatNumber(date.getDate());
+    var h = formatNumber(date.getHours());
+    var m = formatNumber(date.getMinutes());
+    var s = formatNumber(date.getSeconds());
+  format = format.replace("Y", Y);
+  format = format.replace("M", M);
+  format = format.replace("D", D);
+  format = format.replace("h", h);
+  format = format.replace("m", m);
+  format = format.replace("s", s);
+
+  return format;
+  }
+
+
+
+
+

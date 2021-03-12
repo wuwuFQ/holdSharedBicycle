@@ -1,0 +1,7 @@
+<!--pages/unlockManual/unlockManual.wxml-->
+
+<view class="titleView">输入车牌号</view>
+
+<input placeholder="请输入车牌号" bindinput="bindinputHandle"></input>
+
+<button bindtap="unlockHandle">立即用车</button>

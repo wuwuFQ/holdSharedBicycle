@@ -1,4 +1,5 @@
 // pages/mine/mine.js
+
 Page({
 
   /**
@@ -8,9 +9,17 @@ Page({
     header_src: "/images/bike.png",
     nickName: "昵称",
     auth_icon: "/images/idNumber.png",
+    credit: '',
+    // mine_group_title: ["钱包", "行程", "消息", "用户指南", "关于我们", "设置"],
+    // mine_group_imgs: ["/images/userwallet.png", "/images/usertrip.png", "/images/usernews.png", "/images/userGuide.png", "/images/useraboutUs.png", "/images/userSetUp.png"],
 
-    mine_group_title: ["钱包", "行程", "消息", "用户指南", "关于我们", "设置"],
-    mine_group_imgs: ["/images/userwallet.png", "/images/usertrip.png", "/images/usernews.png", "/images/userGuide.png", "/images/useraboutUs.png", "/images/userSetUp.png"],
+    // mine_group_title: ["钱包", "行程", "消息",  "设置"],
+    // mine_group_imgs: ["/images/userwallet.png", "/images/usertrip.png", "/images/usernews.png", "/images/userSetUp.png"],
+
+    mine_group_title: ["钱包", "优惠券", "设置"],
+    mine_group_imgs: ["/images/userwallet.png", "/images/userCoupons.png", "/images/userSetUp.png"],
+
+
 
   },
 
@@ -33,7 +42,17 @@ Page({
    */
   onShow: function() {
     var that = this;
-    that.getUserInfo();
+    //是否登录
+    var status = getApp().getUserLoginStatus();
+    if (status) {
+      that.getUserInfo();
+
+    } else {
+      // wx.reLaunch({
+      //   url: '../login/login',
+      // })
+    }
+
   },
 
   /**
@@ -74,11 +93,10 @@ Page({
   getUserInfo: function() {
     var that = this;
 
-    var auth = 'bearer ' + wx.getStorageSync("access_token");
     var header = {
       'content-type': 'application/json'
     }
-    header.Authorization = auth;
+    header.Authorization = getApp().getGlobalAuthorization();
     wx.request({
       url: getApp().globalData.httpURL + '/api/user/account',
       method: "POST",
@@ -92,6 +110,16 @@ Page({
         var basicInfo = res.data.basicInfo;
         var realInfo = res.data.realInfo;
 
+        if (basicInfo.avatarUrl) {
+          that.setData({
+            header_src: basicInfo.avatarUrl,
+          });
+        }
+        that.setData({
+          nickName: basicInfo.nickName,
+          credit: account.point,
+        });
+
         wx.setStorage({
           key: 'account',
           data: account,
@@ -101,10 +129,8 @@ Page({
           key: 'basicInfo',
           data: basicInfo,
           success: function(res) {
-            that.setData({
-              header_src: basicInfo.avatarUrl,
-              nickName: basicInfo.nickName,
-            });
+          
+            
           },
         });
 
@@ -130,6 +156,25 @@ Page({
 
 
   didSelectCellHandle: function(e) {
+    if (getApp().getUserLoginStatus() == false) {
+      wx.showModal({
+        title: '登录提示',
+        content: '需要登录后才能查看信息',
+        confirmText: '去登录',
+        cancelText: '暂不登录',
+        success(res) {
+          if (res.confirm) {
+
+            wx.reLaunch({
+              url: '../login/login',
+            })
+          } else if (res.cancel) {
+
+          }
+        }
+      })
+      return;
+    }
     console.log(e);
     var tag = e.currentTarget.dataset.tag;
     switch (tag) {
@@ -139,17 +184,30 @@ Page({
       })
       break;
       case 1:
+        wx.navigateTo({
+          url: '../couponList/couponList',
+        })
+        // wx.navigateTo({
+        //   url: '../tripList/tripList',
+        // })
         break;
       case 2:
+        wx.navigateTo({
+          url: '../setting/setting',
+        })
+        // wx.navigateTo({
+        //   url: '../messageList/messageList',
+        // })
         break;
       case 3:
+        // wx.navigateTo({
+        //   url: '../setting/setting',
+        // })
         break;
       case 4:
         break;
       case 5:
-      wx.navigateTo({
-        url: '../setting/setting',
-      })
+      
         break;
         default:
         break;
@@ -157,6 +215,25 @@ Page({
   },
 
   header_imageViewClick: function () {
+    if (getApp().getUserLoginStatus() == false) {
+      wx.showModal({
+        title: '登录提示',
+        content: '需要登录后才能查看信息',
+        confirmText: '去登录',
+        cancelText: '暂不登录',
+        success(res) {
+          if (res.confirm) {
+
+            wx.reLaunch({
+              url: '../login/login',
+            })
+          } else if (res.cancel) {
+
+          }
+        }
+      })
+      return;
+    }
 wx.navigateTo({
   url: '../mine_info/mine_info',
 })

@@ -9,4 +9,10 @@
   scale="{{scale}}" 
   bindcontroltap="bindcontroltap">
 </map>
+
+<view class="tripView" style="left: {{tirpViewLeft}}px" hidden="{{tripView_hidden}}">
+<view class="tripView_title">{{tripTitle}}</view>
+<view class="tripView_timer">{{tripTime}}</view>
+<view class="tripView_continue" bindtap="tripView_continueHandle" hidden="{{tripView_continue_hidden}}">继续用车</view>
+</view>
   

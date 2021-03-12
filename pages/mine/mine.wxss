@@ -20,19 +20,15 @@
   flex-direction: row;
   flex-wrap: wrap;
   margin-top: 100rpx;
-  justify-content: center;
+  justify-content: space-between;
 }
 
 .mine_group>.mine_cell {
-  /* width: 37.5%; */
-  /* box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  -webkit-box-sizing: border-box;
-  border: solid blue 1px; */
-  width: 45%;
+  width: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
+  margin: 40rpx 0;
 }
 
 .mine_content {
@@ -43,7 +39,14 @@
   background-color: white;
   box-shadow: 2px 2px 10px 3px #aaa; /*for Android*/
   -webkit-box-shadow: 2px 2px 10px 3px #aaa; /*for IOS*/
-  border-radius: 6rpx;
-  margin-top: 20rpx;
-  margin-bottom: 20rpx;
+  border-radius: 10rpx;
+  /* margin-top: 40rpx;
+  margin-bottom: 40rpx; */
+}
+.creditView{
+  position: absolute;
+  bottom: 40rpx;
+  width: 100%;
+  text-align: center;
+  color: green;
 }

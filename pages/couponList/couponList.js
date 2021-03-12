@@ -1,11 +1,11 @@
-// pages/wallet/wallet.js
+// pages/couponList/couponList.js
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    balance: "0.00",
+    couponsArr: [],
 
   },
 
@@ -13,7 +13,10 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
- 
+    var that = this;
+
+    that.getCouponList();
+
   },
 
   /**
@@ -27,8 +30,6 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-    var that = this;
-    that.getUserInfo();
 
   },
 
@@ -66,23 +67,17 @@ Page({
   onShareAppMessage: function () {
 
   },
-  balanceRechargeHandle: function () {
-    wx.navigateTo({
-      url: '../wallet_recharge/wallet_recharge',
-    })
-  },
-  
 
-  //获取用户信息
-  getUserInfo: function () {
+  //
+  getCouponList: function() {
     var that = this;
 
     var header = {
       'content-type': 'application/json'
     }
     header.Authorization = getApp().getGlobalAuthorization();
-        wx.request({
-      url: getApp().globalData.httpURL + '/api/user/account',
+    wx.request({
+      url: getApp().globalData.httpURL + '/api/biz/coupons',
       method: "POST",
       header: header,
       data: {
@@ -90,32 +85,14 @@ Page({
       },
       success: function (res) {
         console.log(res);
-        var account = res.data.account;
-        var basicInfo = res.data.basicInfo;
-        var realInfo = res.data.realInfo;
-        that.setData({
-          balance: res.data.account.balance.toFixed(2)
-        })
-
+        var coupons = res.data.coupons;
         
+        that.setData({
+          couponsArr: coupons
 
-        wx.setStorage({
-          key: 'account',
-          data: account,
-        });
-
-        wx.setStorage({
-          key: 'basicInfo',
-          data: basicInfo,
-        });
-
-        wx.setStorage({
-          key: 'realInfo',
-          data: realInfo,
-        });
+        })
       }
+
     })
   },
-
-
- })
+})

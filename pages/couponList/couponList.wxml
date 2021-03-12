@@ -1,0 +1,15 @@
+<!--pages/couponList/couponList.wxml-->
+<wxs src="../../utils/FQTool.wxs" module="tools" />
+
+<view class="backgroundView" wx:for="{{couponsArr}}" wx:key="couponsArr">
+<view class="coupon_list_cell">
+<view class="moneyView">￥{{tools.numberToFix(item.amount, 1)}}</view>
+<view class="detailView">   
+<view class="titleName">骑行优惠券</view>
+<view class="expirationDate">有效期：{{tools.timestampToTime(item.expiredTime, 'Y年M月D日')}}</view>
+</view>
+</view>
+</view>
+
+
+

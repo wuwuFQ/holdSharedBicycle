@@ -1,0 +1,52 @@
+/* pages/trip_end_comment/trip_end_comment.wxss */
+
+.complete_icon {
+  display: flex;
+  justify-content: center;
+  margin-top: 80rpx;
+}
+
+.payMoneyView {
+  display: flex;
+  justify-content: center;
+  margin-top: 20rpx;
+}
+
+.tripDetail {
+  display: flex;
+  flex-direction: column;
+  margin-top: 80rpx;
+  border-top: solid #ddd 1rpx;
+}
+
+.tripDetail_cell {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20rpx 20rpx;
+  border-bottom: solid #ddd 1rpx;
+}
+.score_title{
+  margin-top: 30rpx;
+  margin-left: 20rpx;
+}
+.commentView{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  margin: 10rpx 50rpx;
+}
+.commentCell{
+  padding: 15rpx 15rpx;
+  border-radius: 8rpx;
+  color: white;
+  font-size: 30rpx;
+}
+button{
+  background: green;
+  color: white;
+  margin: 30rpx 50rpx;
+  height: 80rpx;
+  line-height: 80rpx;
+  border-radius: 40rpx;
+}

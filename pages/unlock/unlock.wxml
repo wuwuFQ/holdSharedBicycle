@@ -1,0 +1,5 @@
+<!--pages/unlock/unlock.wxml-->
+<view class="app_icon"><image src="/images/appIcon.png" style="width: 300rpx; height: 300rpx"></image></view>
+
+<button class="scanBtn" bindtap="scanHandle">扫码用车</button>
+<!-- <button class="manualBtn" bindtap="manualHandle">手动输入车牌号</button> -->

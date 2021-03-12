@@ -1,0 +1,14 @@
+<!--pages/messageList/messageList.wxml-->
+
+<view class="message_list" wx:for="{{dataArr}}">
+
+<view class="message_cell">
+<view class="topView">
+<view class="roundView"></view>
+<view class="titleView">{{item.msgTitle}}</view>
+</view>
+<view class="contentView">{{item.msgContent}}</view>
+</view>
+
+</view>
+

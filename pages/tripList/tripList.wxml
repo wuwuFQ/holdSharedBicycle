@@ -1,0 +1,14 @@
+<!--pages/tripList/tripList.wxml-->
+<wxs src="../../utils/FQTool.wxs" module="tools" />
+
+<view class="trip_list" wx:for="{{dataArr}}">
+<view class="trip_list_cell">
+<view class="startTime">时间：{{tools.timestampToTime(item.startTime, 'Y-M-D h:m:s')}}</view>
+
+<view class="bottomView">
+<view class="amount">行程消费：￥{{tools.numberToFix(item.amount, 2)}}</view>
+<view class="tno">车牌号：{{item.tno}}</view>
+</view>
+
+</view>
+</view>

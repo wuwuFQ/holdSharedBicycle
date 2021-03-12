@@ -40,7 +40,7 @@ margin-top: 100rpx;
   color: white;
 }
 
-.agree-group{
+/* .agree-group{
   display: inline-block;
   margin: 0 0 0 60rpx;
 }
@@ -60,7 +60,7 @@ color: rgba(102, 113, 117, 0.966);
   height: 30rpx;
   font-size: 26rpx;
   color: blue;
-}
+} */
 
 .loginButton{
   width: 80%;

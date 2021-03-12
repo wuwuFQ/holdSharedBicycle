@@ -23,7 +23,7 @@
 <view>{{name}}</view>
 </view>
 
-<view class="info_cell"> 
+<view class="info_cell" bindtap="authClickHandle"> 
 <view> 实名认证 </view>
 <view>{{auth}}</view>
 </view>

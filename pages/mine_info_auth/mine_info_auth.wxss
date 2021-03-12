@@ -1,0 +1,24 @@
+/* pages/mine_info_auth/mine_info_auth.wxss */
+input{
+  margin: 40rpx 40rpx;
+  border: solid #ddd 1rpx;
+  height: 80rpx;
+  display: felx;
+  justify-content: center;
+  align-items: center;
+  font-size: 30rpx;
+}
+button{
+  margin: 60rpx 80rpx;
+  height: 80rpx;
+  line-height: 80rpx;
+  border-radius: 40rpx;
+  background: green;
+  color: white;
+}
+view{
+  color: black;
+  margin: 5rpx 40rpx;
+  font-size: 30rpx;
+  font-weight: lighter;
+}
